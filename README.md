@@ -1,13 +1,12 @@
 # Project Name
 
-> Project description
+> Scale-Me System Design
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Scale-me/Reviews
+  - https://github.com/Scale-me/Reservations
+  - https://github.com/Scale-me/Banner_Gallery
 
 ## Table of Contents
 
@@ -37,3 +36,20 @@ npm install -g webpack
 npm install
 ```
 
+### API ROUTES
+
+For creating: app.get ~ "/api/id:/menu" (GET)
+
+For posting: app.post ~ "/api/menu" (POST)
+
+For updating: app.put ~ "/api/id:/menu" (PUT)
+
+For deleting: app.delete ~ "/api/id:/menu" (DELETE)
+
+Create/POST: Input: {mealOptions, foodCategories, meal} Reponse: {id}
+
+Read/GET: Input: {id} Response: {menu}
+
+Update/PUT: Input: {id} Reponse: {menu}
+
+Delete/DELETE: Input: {id} Reponse: {success}
