@@ -38,18 +38,18 @@ npm install
 
 ### API ROUTES
 
-For creating: app.get ~ "/api/id:/menu" (GET)
+For creating: GET ~ "/api/id:/menu"
 
-For posting: app.post ~ "/api/menu" (POST)
+For posting: POST ~ "/api/menu"
 
-For updating: app.put ~ "/api/id:/menu" (PUT)
+For updating: PUT ~ "/api/id:/menu"
 
-For deleting: app.delete ~ "/api/id:/menu" (DELETE)
+For deleting: DELETE ~ "/api/id:/menu"
 
-Create/POST: Input: {mealOptions, foodCategories, meal} Reponse: {id}
+Create/POST: Input: {[food = {PrimaryCategory: value, SecondaryCategory: value}, food2, food3, ...]} Reponse: {'success'}
 
-Read/GET: Input: {id} Response: {menu}
+Read/GET: Input: {id} Response: {[food = {PrimaryCategory: value, SecondaryCategory: value}, food2, food3, ...]}
 
-Update/PUT: Input: {id} Reponse: {menu}
+Update/PUT: Input: {id, [food = {PrimaryCategory: changedValue, SecondaryCategory: changedValue}, food2, ...]} Reponse: {'success}
 
 Delete/DELETE: Input: {id} Reponse: {success}
