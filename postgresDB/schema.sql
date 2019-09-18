@@ -1,27 +1,29 @@
+DROP DATABASE IF EXISTS menu;
+
 CREATE DATABASE menu;
 
-USE menu;
+\c menu;
 
 CREATE TABLE restaurants (
-  id int NOT NULL PRIMARY KEY,
-);
-
-CREATE TABLE meals (
-  id int NOT NULL PRIMARY KEY,
-  name varchar(20) NOT NULL,
-  description varchar(50),
-  price int NOT NULL,
-  restaurants_id int FOREIGN KEY REFERENCE restaurants(restaurants_id),
-  mealTimes_id int FOREIGN KEY REFERENCE mealTimes(mealTimes_id),
-  mealCategories_id int FOREIGN KEY REFERENCE mealCategories(mealCategories_id),
+  id int PRIMARY KEY
 );
 
 CREATE TABLE mealTimes (
-  id int NOT NULL PRIMARY KEY,
-  name varchar(20) NOT NULL,
+  id int PRIMARY KEY,
+  name varchar(30) NOT NULL
 );
 
 CREATE TABLE mealCategories (
-  id int NOT NULL PRIMARY KEY,
-  name varchar(20) NOT NULL,
+  id int PRIMARY KEY,
+  name varchar(30) NOT NULL
+);
+
+CREATE TABLE meals (
+  id int PRIMARY KEY,
+  name varchar(30) NOT NULL,
+  description varchar(200),
+  price FLOAT(2),
+  restaurantsId int REFERENCES restaurants(id),
+  mealTimesId int REFERENCES mealTimes(id),
+  mealCategoriesId int REFERENCES mealCategories(id)
 );

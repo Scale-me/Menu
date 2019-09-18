@@ -48,7 +48,16 @@ For deleting: DELETE ~ "/api/id:/menu"
 
 Create/POST: Input:
 ```javascript
-  menu = {name, category: [{name, subcategory: [{name, description, price}, ...], ...}, ...]}
+  menu = {
+    name,
+    category: [
+      {
+        name,
+        subcategory: [
+          {
+            name,
+            description,
+            price}, ...], ...}, ...]}
 
   Reponse: {'success'}
 ```
@@ -64,7 +73,8 @@ Read/GET: Input:
 Update/PUT: Input:
 ```javascript
   {
-    id, menu = {name, category: [{name, subcategory: [{name, description, price}, ...], ...}, ...]}
+    id,
+    menu = {name, category: [{name, subcategory: [{name, description, price}, ...], ...}, ...]}
   }
 
   Reponse: {'success}

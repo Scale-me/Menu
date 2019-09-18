@@ -1,1 +1,4 @@
-const pg = require('pg');
+module.exports = {
+  user: 'root',
+  database: 'menu',
+};
