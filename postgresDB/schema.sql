@@ -10,20 +10,20 @@ CREATE TABLE restaurants (
 
 CREATE TABLE mealTimes (
   id int PRIMARY KEY,
-  name varchar(30) NOT NULL
+  timeName varchar(30) NOT NULL
 );
 
 CREATE TABLE mealCategories (
   id int PRIMARY KEY,
-  name varchar(30) NOT NULL
+  categoryName varchar(30) NOT NULL
 );
 
 CREATE TABLE meals (
-  id int PRIMARY KEY,
+  id int,
   name varchar(30) NOT NULL,
   description varchar(200),
   price FLOAT(2),
-  restaurantsId int REFERENCES restaurants(id),
-  mealTimesId int REFERENCES mealTimes(id),
-  mealCategoriesId int REFERENCES mealCategories(id)
+  restaurantsId int,
+  mealTimesId int,
+  mealCategoriesId int
 );

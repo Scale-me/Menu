@@ -1,16 +1,10 @@
-let menuSchema = {
-  id : 'number',
-  menu : {
-    category : [{
-      name : 'string',
-      subcategory : [{
-        name : 'string',
-        meal : [{
-          name : 'string',
-          price : 'number',
-          description : 'string',
-        }, meal2, meal3, ...]
-      }, subcategory2, subcategory3, ...]
-    }, category2, category3, ...]
-  }
-}
+const elasticsearch = require('elasticsearch');
+
+var client = new elasticsearch.Client( {  
+  hosts: [
+    'https://[username]:[password]@[server]:[port]/',
+    'https://[username]:[password]@[server]:[port]/'
+  ]
+});
+
+module.exports = client;  

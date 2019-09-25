@@ -4,13 +4,13 @@ const Chance = require('chance');
 
 const chance = Chance();
 
-const mealOptions = ['Cocktails', 'Bar', 'Dinner', 'Brunch', 'Cheese', 'Lunch', 'Dessert'];
+const mealOptions = ['Dinner', 'Brunch', 'Lunch'];
 
-const foodCategories = ['Raw Bar', 'Snacks', 'Appetizers', 'Cheese', 'Absinthe Classics', 'Entrees', 'Sides', 'Small Plates', 'Soups & Salads', 'Pastries', 'Main', 'Desserts', 'After-dinner Spirits', 'Selection of Brandy', 'Selected Single-malt Scotches', 'Port, Sherry, & Madeira', 'Dessert Wines', 'Selection of Tea', 'Cocktails'];
+const foodCategories = ['Snacks', 'Appetizers', 'Cheese', 'Entrees', 'Sides', 'Small Plates', 'Soups & Salads', 'Main', 'Desserts', 'Cocktails'];
 
 const createMenu = (id) => {
   const rngArr = (array, max) => chance.pickset(array, chance.integer({ min: 1, max }));
-  const rng = () => chance.integer({ min: 4, max: 12 });
+  const rng = () => chance.integer({ min: 2, max: 4 });
   const createDish = () => {
     const desc = faker.lorem.sentence();
     const dish = {
@@ -32,7 +32,7 @@ const createMenu = (id) => {
 
   const createMeal = () => {
     const meal = {};
-    const categories = rngArr(foodCategories, foodCategories.length);
+    const categories = rngArr(foodCategories, 3);
 
     for (let i = 0; i < categories.length; i++) {
       meal[categories[i]] = createCategory();
@@ -42,7 +42,7 @@ const createMenu = (id) => {
 
   const createAMenu = () => {
     const menu = { id };
-    const meals = rngArr(mealOptions, mealOptions.length);
+    const meals = rngArr(mealOptions, 3);
     for (let i = 0; i < meals.length; i++) {
       menu[meals[i]] = createMeal();
     }

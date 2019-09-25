@@ -167,8 +167,10 @@ function (_React$Component) {
     value: function getMenuData() {
       var _this2 = this;
 
-      var id = window.location.pathname.split('/')[1].slice(1);
-      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.get("/api/".concat(id === undefined ? '1' : id, "/menu"), function (result) {
+      // const id = window.location.pathname.split('/')[1].slice(1); ${id === undefined ? '1' : id}
+      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:3004/api/1/menu", function (result) {
+        console.log(result);
+
         var selectedMealOption = _this2.getMealOptionList(result[0])[0];
 
         _this2.setState({
