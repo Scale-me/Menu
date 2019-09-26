@@ -2,7 +2,7 @@ const newRelic = require('newrelic');
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const compression = require('compression');
 // const db = require('../postgresDB');
 const {getMenuDataByRestaurantsIdFromMeals, postMenuDataByRestaurantsIdFromMeals, updateMenuDataByRestaurantsIdFromMeals, deleteMeal} = require('../postgresDB/controller.js');
@@ -12,7 +12,7 @@ const port = 3004;
 
 app.use(compression());
 app.use(cors());
-app.use(morgan());
+// app.use(morgan());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
