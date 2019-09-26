@@ -33,7 +33,7 @@ const getMenuDataByRestaurantsIdFromMeals = (req, res, id) => {
     FROM meals
     INNER JOIN mealCategories ON (meals.mealCategoriesId = mealCategories.id)
     INNER JOIN mealTimes ON (meals.mealTimesId = mealTimes.id)
-    WHERE restaurantsId=${id}`)
+    WHERE restaurantsId=${id};`)
     .then(data => turnDataIntoMenuArrayOfObjects(data))
     // .then(menu => console.log(menu))
     .then(data => res.status(200).json(data))
