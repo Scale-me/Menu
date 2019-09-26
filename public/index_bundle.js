@@ -168,7 +168,7 @@ function (_React$Component) {
       var _this2 = this;
 
       // const id = window.location.pathname.split('/')[1].slice(1); ${id === undefined ? '1' : id}
-      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://localhost:3004/api/1/menu", function (result) {
+      jquery__WEBPACK_IMPORTED_MODULE_1___default.a.get("ec2-18-221-93-107.us-east-2.compute.amazonaws.com:3004/api/1/menu", function (result) {
         console.log(result);
 
         var selectedMealOption = _this2.getMealOptionList(result[0])[0];
