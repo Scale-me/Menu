@@ -30,7 +30,7 @@ class Menu extends React.Component {
   // get menu data from server
   getMenuData() {
     // const id = window.location.pathname.split('/')[1].slice(1); ${id === undefined ? '1' : id}
-    $.get(`http://ec2-18-221-93-107.us-east-2.compute.amazonaws.com:3004/api/1/menu`, (result) => {
+    $.get(`http://18.218.33.135:3004/api/1/menu`, (result) => {
       console.log(result);
       const selectedMealOption = this.getMealOptionList(result[0])[0];
       this.setState({ menu: result[0], selectedMealOption, isLoading: false });
