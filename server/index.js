@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 // const morgan = require('morgan');
 const compression = require('compression');
 // const db = require('../postgresDB');
-const {getMenuDataByRestaurantsIdFromMeals, postMenuDataByRestaurantsIdFromMeals, updateMenuDataByRestaurantsIdFromMeals, deleteMeal} = require('../postgresDB/controller.js');
+const { getMenuDataByRestaurantsIdFromMeals, postMenuDataByRestaurantsIdFromMeals, updateMenuDataByRestaurantsIdFromMeals, deleteMeal } = require('../postgresDB/controller.js');
 
 const app = express();
 const port = 3004;
