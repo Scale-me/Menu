@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'index_bundle.js',
+    library: 'app',
   },
   module: {
     rules: [
